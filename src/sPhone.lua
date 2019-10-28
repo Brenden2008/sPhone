@@ -1,6 +1,6 @@
 local function kernel(...)
 	_G.sPhone = {
-		version = "Beta 1.2.1",
+		version = "Beta 1.2.2",
 		user = "Guest",
 		devMode = false,
 		mainTerm = term.current(),
@@ -828,8 +828,8 @@ local function kernel(...)
 		end
 	end
 	
+	redraw()
 	while true do
-		redraw()
 		local eventData = {os.pullEventRaw()}
 		if eventData[1] == 'mouse_click' then
 			if eventData[4] == 1 and eventData[3] == termWidth then
@@ -1089,8 +1089,10 @@ end
 		if not script then
 			return false, "config corrupted"
 		end
+		
+		local result = {}
 		local ok, err = pcall(function()
-			setfenv(loadfile(fs.combine("/.sPhone/apps/spk",_config.id.."/files/".._config.main)), setmetatable({
+			result = {setfenv(loadfile(fs.combine("/.sPhone/apps/spk",_config.id.."/files/".._config.main)), setmetatable({
 				spk = {
 					getName = function()
 						return (_config.name or nil)
@@ -1126,13 +1128,13 @@ end
 				},
 				string = string,
 				sPhone = sPhone,
-			 }, {__index = getfenv()}))()
+			 }, {__index = getfenv()}))()}
 		end)
 		
 		if not ok then
 			return false, err
 		end
-		return true
+		return true, result
 	end
 	
 	local function home()
