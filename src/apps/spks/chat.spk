@@ -1,5 +1,5 @@
 --
--- sPhone Application Package
+-- Sertex Application Package
 -- Built with SPK builder 1.2
 --
 {
@@ -20,16 +20,15 @@ if not peripheral.isPresent(\\\"back\\\") or not peripheral.getType(\\\"back\\\"
 end\\\
 write(\\\"Host: \\\")\\\
 local h = read()	term.setCursorPos(2,6)\\\
-shell.run(\\\"/rom/programs/rednet/chat\\\", \\\"join\\\", h, sPhone.user)\\\
-\",\
+shell.run(\\\"/rom/programs/rednet/chat\\\", \\\"join\\\", h, sPhone.user)\",\
 }",
   config = "{\
   type = \"app\",\
   name = \"RedNet Chat\",\
   version = 1,\
-  main = \"chat.lua\",\
   id = \"sphone.chat\",\
-  author = \"BeaconNet\",\
+  author = \"Sertex\",\
   hidden = true,\
+  main = \"chat.lua\",\
 }",
 }

@@ -1,5 +1,5 @@
 --
--- sPhone Application Package
+-- Sertex Application Package
 -- Built with SPK builder 1.2
 --
 {
@@ -13,15 +13,16 @@ if tonumber(x) then\\\
 else\\\
   sPhone.winOk(\\\"X Y Z\\\",\\\"? ? ?\\\")\\\
 end\\\
-\",\
+\\\
+return true\",\
 }",
   config = "{\
   type = \"app\",\
   name = \"GPS\",\
   version = 1,\
-  main = \"gps.lua\",\
   id = \"sphone.gps\",\
-  author = \"BeaconNet\",\
+  author = \"Sertex\",\
   hidden = true,\
+  main = \"gps.lua\",\
 }",
 }

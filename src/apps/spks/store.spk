@@ -1,5 +1,5 @@
 --
--- sPhone Application Package
+-- Sertex Application Package
 -- Built with SPK builder 1.2
 --
 {
@@ -69,7 +69,7 @@ while true do\\\
 	})\\\
 	\\\
 	if not path then\\\
-		return\\\
+		return true\\\
 	end\\\
 	\\\
 		local data = http.get(\\\"https://raw.github.com/SertexTeam/sPhone-Store/master/apps/\\\"..path).readAll()\\\
@@ -132,16 +132,15 @@ while true do\\\
 		\\\
 		\\\
 		\\\
-	end\\\
-\",\
+	end\",\
 }",
   config = "{\
   type = \"app\",\
   name = \"Store\",\
   version = 1,\
-  main = \"store.lua\",\
   id = \"sphone.store\",\
   author = \"Sertex\",\
   hidden = true,\
+  main = \"store.lua\",\
 }",
 }

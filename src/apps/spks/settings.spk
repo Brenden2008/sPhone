@@ -1,5 +1,5 @@
 --
--- sPhone Application Package
+-- Sertex Application Package
 -- Built with SPK builder 1.2
 --
 {
@@ -239,6 +239,7 @@ local function editTheme()\\\
 		\\\"Background Color\\\",\\\
 		\\\"Window Options\\\",\\\
 		\\\"Login Options\\\",\\\
+		\\\"\\\",\\\
 		\\\"Save\\\",\\\
 		\\\"Load\\\",\\\
 		\\\"Reset\\\",\\\
@@ -307,7 +308,7 @@ local function editTheme()\\\
 					sPhone.applyTheme(\\\"lock.error\\\", sPhone.colorPicker(\\\"Error\\\",sPhone.getTheme(\\\"lock.error\\\")))\\\
 				end\\\
 			end\\\
-		elseif id == 9 then\\\
+		elseif id == 10 then\\\
 			local saveTheme\\\
 			sPhone.header(sPhone.user)\\\
 			term.setCursorPos(w,1)\\\
@@ -334,7 +335,7 @@ local function editTheme()\\\
 			end\\\
 			fs.copy(\\\"/.sPhone/config/theme\\\", saveTheme)\\\
 			sPhone.winOk(\\\"Theme saved!\\\")\\\
-		elseif id == 10 then\\\
+		elseif id == 11 then\\\
 			local loadTheme = sPhone.list()\\\
 			if loadTheme then\\\
 				if fs.exists(loadTheme) and not fs.isDir(loadTheme) then\\\
@@ -349,7 +350,7 @@ local function editTheme()\\\
 					sPhone.winOk(\\\"Theme not found!\\\")\\\
 				end\\\
 			end\\\
-		elseif id == 11 then\\\
+		elseif id == 12 then\\\
 			fs.delete(\\\"/.sPhone/config/theme\\\")\\\
 			sPhone.theme = sPhone.defaultTheme\\\
 			sPhone.winOk(\\\"Removed Theme\\\")\\\
@@ -409,8 +410,8 @@ while true do\\\
 	end\\\
 	local name, id = sPhone.menu(menu, \\\"Settings\\\",\\\"X\\\")\\\
 	if id == 0 then\\\
-		task.kill(temp.get(\\\"homePID\\\"))\\\
-		return\\\
+		--task.kill(temp.get(\\\"homePID\\\"))\\\
+		return true\\\
 	elseif id == 1 then\\\
 		setfenv(loadstring(http.get(\\\"https://raw.githubusercontent.com/SertexTeam/sPhone/master/src/installer.lua\\\").readAll()),getfenv())()\\\
 	elseif id == 2 then\\\
@@ -428,16 +429,15 @@ while true do\\\
 	elseif id == 8 then\\\
 		config.write(\\\"/.sPhone/config/sPhone\\\",\\\"showUpdate\\\", not config.read(\\\"/.sPhone/config/sPhone\\\",\\\"showUpdate\\\"))\\\
 	end\\\
-end\\\
-\",\
+end\",\
 }",
   config = "{\
   type = \"system\",\
   name = \"Settings\",\
   main = \"settings.lua\",\
-  version = 1,\
   id = \"sphone.settings\",\
   author = \"Sertex\",\
   hidden = true,\
+  version = 1,\
 }",
 }
