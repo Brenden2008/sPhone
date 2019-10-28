@@ -1,12 +1,10 @@
 # Welcome to sPhone repository!
 
-##Install:
+## Install:
 
 Stable: `pastebin run HsJSnhKQ`
 
-Dev: `pastebin run qNz53cR9` (outdated)
-
-##Dates:
+## Dates:
 
 * Started (Alpha 1): 31st July 2015
 * Beta 1: 20th November 2016
