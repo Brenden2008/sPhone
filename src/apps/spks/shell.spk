@@ -1,5 +1,5 @@
 --
--- sPhone Application Package
+-- Sertex Application Package
 -- Built with SPK builder 1.2
 --
 {
@@ -9,15 +9,16 @@ term.setTextColor(colors.white)\\\
 term.clear()\\\
 term.setCursorPos(1,1)\\\
 shell.run(\\\"/rom/programs/shell\\\")\\\
-\",\
+\\\
+return true\",\
 }",
   config = "{\
   type = \"app\",\
   name = \"Shell\",\
   version = 1,\
-  main = \"shell.lua\",\
   id = \"sphone.shell\",\
-  author = \"BeaconNet\",\
+  author = \"Sertex\",\
   hidden = true,\
+  main = \"shell.lua\",\
 }",
 }
