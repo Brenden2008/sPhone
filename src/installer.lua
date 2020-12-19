@@ -1,7 +1,7 @@
 
 
 if not pocket or not term.isColor() then
-  print("sPhone is only for Advanced Pocket Computers!")
+  print("MinePhone OS is only for Advanced Pocket Computers!")
   return
 end
 
@@ -70,7 +70,7 @@ local function gui()
 	paintutils.drawLine(1,1,w,1,colors.blue)
 	term.setTextColor(colors.white)
 	term.setCursorPos(2,1)
-	print("sPhone Installer")
+	print("MinePhone Installer")
 	term.setCursorPos(1,2)
 	term.setTextColor(colors.black)
 	term.setBackgroundColor(colors.white)
@@ -147,7 +147,7 @@ term.setCursorPos(1,1)
 gui()
 term.setCursorPos(2,3)
 print("License\n")
-printError("You must accept the license to install sPhone\n")
+printError("You must accept the license to install MinePhone OS\n")
 print("The MIT License (MIT)\nCopyright (c) 2017 Sertex\n\nRead full license here:\nhttps://raw.github.com/SertexTeam/sPhone/master/LICENSE")
 paintutils.drawFilledBox(2,17,9,19,colors.lime)
 term.setCursorPos(3,18)
@@ -222,7 +222,7 @@ f.close()
 if not fs.exists("/startup") then
 	fs.copy("/.sPhone/startup","/startup")
 end
-center("  sPhone installed!",h-2)
+center("  MinePhone OS installed!",h-2)
 center("  Rebooting...",h-1)
 sleep(2)
 os.reboot()
